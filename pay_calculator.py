@@ -1,15 +1,12 @@
-def computepay(h,r):
-    additional_hours = h - 40;
-    pay = h * r
+h = float(raw_input("Hours worked:"))
+r = float(raw_input("Rate per hour:"))
 
-    if additional_hours > 0:
-        pay = pay - (additional_hours * r) + (additional_hours * (r * 1.5))
-
+def computepay(hours, rate):
+    if hours <= 40:
+        pay = hours * rate
+    elif hours > 40:
+        overtime = hours - 40
+        pay = 40 * rate + overtime * (rate * 1.5)
     return pay
 
-try:
-    hours = float(raw_input("Enter Hours:"))
-    rate = float(raw_input("Enter Rate:"))
-    print computepay(hours, rate)
-except ValueError:
-    print "Please enter numbers only"
+print computepay(h, r)
