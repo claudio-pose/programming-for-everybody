@@ -15,7 +15,7 @@ def loadURL(url, position, steps):
         tags = soup('a')
         loadURL(tags[position].get('href', None), position, steps)
 
-position = int(raw_input('Position:')) - 1
-steps = int(raw_input('Steps:'))
+position = int(raw_input('Position: ')) - 1
+steps = int(raw_input('Steps: '))
 
 loadURL('http://python-data.dr-chuck.net/known_by_Aymie.html', position, steps)
