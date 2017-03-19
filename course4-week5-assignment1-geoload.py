@@ -9,7 +9,7 @@ import ssl
 # If you are in China this URL might work (with key):
 # serviceurl = "http://maps.google.cn/maps/api/geocode/json?"
 
-serviceurl = "http://python-data.dr-chuck.net/geojson?"
+serviceurl = "http://maps.googleapis.com/maps/api/geocode/json?"
 
 
 # Deal with SSL certificate anomalies Python > 2.7
@@ -22,7 +22,7 @@ cur = conn.cursor()
 cur.execute('''
 CREATE TABLE IF NOT EXISTS Locations (address TEXT, geodata TEXT)''')
 
-fh = open("where.data")
+fh = open("course4-week4-assignment1-where.data")
 count = 0
 for line in fh:
     if count > 200 :
